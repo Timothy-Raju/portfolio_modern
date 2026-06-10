@@ -730,6 +730,31 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(135deg, rgba(6, 6, 9, 0.88) 0%, rgba(13, 13, 18, 0.96) 100%),
+                url('images/background-projects2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.35;
+            transition: var(--transition-smooth);
+        }
+
+        .project-card:hover::before {
+            opacity: 0.55;
+            transform: scale(1.06);
         }
 
         .project-header {
